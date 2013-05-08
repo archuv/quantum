@@ -26,28 +26,16 @@ def main():
     #subprocess.call(["rcapache2", "reload"])
     #subprocess.call(["a2enmod", "rewrite"])
     print "virtual host creating................."
-    #subprocess.call(["vi", "/etc/apache2/listen.conf"])
-    #subprocess.call(["vi", "/etc/hosts"])
-    #subprocess.call(["/etc/apache2", "ls"])
+    f_in = open ("/etc/apache2/listen.conf").read()
+    text = f_in.replace('#NameVirtualHost *:80', 'NameVirtualHost *:80')
+    f_out = open ("/etc/apache2/listen.conf", 'w').write(text)
+
     
 def cmdtest(printLine):
     #subprocess.call(["vi", "/etc/apache2/listen.conf"])
-    f_in = open ("/etc/apache2/listen.conf", 'r')
-    f_out = open ("/etc/apache2/listen.conf", 'w')
-    
-    lines = f_in.readlines();
-    lines_out = lines
-        
-    if lines[40].strip() == '#NameVirtualHost *:80': 
-        print lines[40].strip() if printLine == True else None
-        print 'match'
-        
-        
-        lines[40].replace = 'NameVirtualHost *:80'
-        print lines[40]
-    else:
-        print lines[40].strip() if printLine == True else None
-        print 'voool'
+    f_in = open ("/etc/apache2/listen.conf").read()
+    text = f_in.replace('#NameVirtualHost *:80', 'NameVirtualHost *:80')
+    f_out = open ("/etc/apache2/listen.conf", 'w').write(text)
 
 
 if __name__ == "__main__":
