@@ -37,8 +37,32 @@ def cmdtest(printLine):
     text = f_in.replace('#NameVirtualHost *:80', 'NameVirtualHost *:80')
     f_out = open ("/etc/apache2/listen.conf", 'w').write(text)
 
+def fileedit():
+    file_in= open ("/etc/apache2/vhosts.d/vhost.or").read()
+    text=file_in.replace('/vhosts/dummy-host.example.com/cgi-bin', '/cgi-bin')
+    text=text.replace('dummy-host.example.com', 'quantum.com')
+    text=text.replace('ErrorLog ', '#ErrorLog')
+    text=text.replace('CustomLog', '#CustomLog')
+    text=text.replace('AllowOverride None', 'AllowOverride All')
+    text=text.replace('ServerName quantum.com', ' ServerName quantum.com\n     ServerAlias quantum.org.bd')
+    #ServerName quantum.com, ServerName quantum.com\nServer... 
+    file_out= open ("/etc/apache2/vhosts.d/quantum.conf", 'w').write(text)
+ 
+def insartfile():
+     file_in= open ("/etc/apache2/vhosts.d/vhost.or",) .read()
+     text=file_in.write("18th line\ServerAlias quantum.org.bd\n")
+     file_out= open ("/etc/apache2/vhosts.d/vhost.or", 'w').write(text)
+     
+         
+        
+    
+  
+
+
 
 if __name__ == "__main__":
     #main()
-    cmdtest(False)
+    #cmdtest(False)
+    fileedit()
+    #insartfile()
 
