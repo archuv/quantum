@@ -1,4 +1,4 @@
-#
+
 
 import os, sys, subprocess
 
@@ -29,12 +29,10 @@ def main():
     f_in = open ("/etc/apache2/listen.conf").read()
     text = f_in.replace('#NameVirtualHost *:80', 'NameVirtualHost *:80')
     f_out = open ("/etc/apache2/listen.conf", 'w').write(text)
-<<<<<<< HEAD
 
-=======
     #subprocess.call(["vi", "/etc/hosts"])
     #subprocess.call(["/etc/apache2", "ls"])
->>>>>>> 6b5d9878fbf7bd8a5788f89bca172ca6dfa5eb8a
+
     
 def cmdtest(printLine):
     #subprocess.call(["vi", "/etc/apache2/listen.conf"])
@@ -42,7 +40,7 @@ def cmdtest(printLine):
     text = f_in.replace('#NameVirtualHost *:80', 'NameVirtualHost *:80')
     f_out = open ("/etc/apache2/listen.conf", 'w').write(text)
 
-<<<<<<< HEAD
+
 def fileedit():
     file_in= open ("/etc/apache2/vhosts.d/vhost.or").read()
     text=file_in.replace('/vhosts/dummy-host.example.com/cgi-bin', '/cgi-bin')
@@ -54,23 +52,32 @@ def fileedit():
     #ServerName quantum.com, ServerName quantum.com\nServer... 
     file_out= open ("/etc/apache2/vhosts.d/quantum.conf", 'w').write(text)
  
-def insartfile():
-     file_in= open ("/etc/apache2/vhosts.d/vhost.or",) .read()
-     text=file_in.write("18th line\ServerAlias quantum.org.bd\n")
-     file_out= open ("/etc/apache2/vhosts.d/vhost.or", 'w').write(text)
+def localhost():
+     file_in= open ("/etc/apache2/vhosts.d/quantum.conf").read()
+     text=file_in.replace('vhosts/quantum.com', 'htdocs')
+     text=text.replace('quantum.com', 'localhost')
+     text=text.replace('ServerAlias quantum.org.bd', '#ServerAlias quantum.org.bd')
+     file_out= open ("/etc/apache2/vhosts.d/_default.conf", 'w').write(text)
+     
+     
+     
+     
+     
+
+    
+    
      
          
         
     
   
-=======
->>>>>>> 6b5d9878fbf7bd8a5788f89bca172ca6dfa5eb8a
 
 
 
 if __name__ == "__main__":
     #main()
     #cmdtest(False)
-    fileedit()
-    #insartfile()
+    #fileedit()
+    localhost()
+    
 
