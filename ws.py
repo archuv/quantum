@@ -29,7 +29,12 @@ def main():
     f_in = open ("/etc/apache2/listen.conf").read()
     text = f_in.replace('#NameVirtualHost *:80', 'NameVirtualHost *:80')
     f_out = open ("/etc/apache2/listen.conf", 'w').write(text)
+<<<<<<< HEAD
 
+=======
+    #subprocess.call(["vi", "/etc/hosts"])
+    #subprocess.call(["/etc/apache2", "ls"])
+>>>>>>> 6b5d9878fbf7bd8a5788f89bca172ca6dfa5eb8a
     
 def cmdtest(printLine):
     #subprocess.call(["vi", "/etc/apache2/listen.conf"])
@@ -37,6 +42,7 @@ def cmdtest(printLine):
     text = f_in.replace('#NameVirtualHost *:80', 'NameVirtualHost *:80')
     f_out = open ("/etc/apache2/listen.conf", 'w').write(text)
 
+<<<<<<< HEAD
 def fileedit():
     file_in= open ("/etc/apache2/vhosts.d/vhost.or").read()
     text=file_in.replace('/vhosts/dummy-host.example.com/cgi-bin', '/cgi-bin')
@@ -57,6 +63,8 @@ def insartfile():
         
     
   
+=======
+>>>>>>> 6b5d9878fbf7bd8a5788f89bca172ca6dfa5eb8a
 
 
 
