@@ -1,5 +1,4 @@
 
-
 import os, sys, subprocess
 
 def main():
@@ -42,7 +41,7 @@ def cmdtest(printLine):
 
 
 def fileedit():
-    file_in= open ("/etc/apache2/vhosts.d/vhost.or").read()
+    file_in= open ("/etc/apache2/vhosts.d/vhost.template").read()
     text=file_in.replace('/vhosts/dummy-host.example.com/cgi-bin', '/cgi-bin')
     text=text.replace('dummy-host.example.com', 'quantum.com')
     text=text.replace('ErrorLog ', '#ErrorLog')
